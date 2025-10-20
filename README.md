@@ -7,9 +7,7 @@
 > este proyecto funciona tanto desde consola (CLI) como desde la página web (GUI)
 
 >[!TIP]
->┌────────────────────────────────────────────
->    🛍️  GESTOR DE PRODUCTOS - FAKE STORE API 
->└────────────────────────────────────────────┘
+> 🛍️  GESTOR DE PRODUCTOS - FAKE STORE API 
 >
 >🌐 MODO SERVIDOR (GUI):
 >   npm run start
