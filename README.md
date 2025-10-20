@@ -2,10 +2,10 @@
 > [!NOTE]
 > # TechLab
 > Practica del manejo estructuras, APIs y lógica dinámica
->
+
 >[!IMPORTANT]
 > este proyecto funciona tanto desde consola (CLI) como desde la página web (GUI)
->
+
 >[!TIP]
 >┌────────────────────────────────────────────
 >    🛍️  GESTOR DE PRODUCTOS - FAKE STORE API 
