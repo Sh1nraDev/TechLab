@@ -363,68 +363,6 @@ function startServer() {
                   </div>
                 `).join('')}
               </div>
-
-              <script>
-                function showNotification(message, isError = false) {
-                  const notif = document.getElementById('notification');
-                  notif.textContent = message;
-                  notif.style.background = isError ? '#ff4444' : '#00ffff';
-                  notif.style.color = isError ? '#fff' : '#000';
-                  notif.classList.add('show');
-                  setTimeout(() => notif.classList.remove('show'), 3000);
-                }
-
-                // Crear producto
-                document.getElementById('productForm').addEventListener('submit', async (e) => {
-                  e.preventDefault();
-                  
-                  const data = {
-                    title: document.getElementById('title').value,
-                    price: document.getElementById('price').value,
-                    category: document.getElementById('category').value,
-                    image: document.getElementById('image').value || 'https://via.placeholder.com/640x480.png',
-                    description: document.getElementById('description').value || 'Sin descripción'
-                  };
-
-                  try {
-                    const response = await fetch('/api/products', {
-                      method: 'POST',
-                      headers: { 'Content-Type': 'application/json' },
-                      body: JSON.stringify(data)
-                    });
-
-                    if (response.ok) {
-                      showNotification('✅ Producto creado exitosamente');
-                      document.getElementById('productForm').reset();
-                      setTimeout(() => location.reload(), 1500);
-                    } else {
-                      showNotification('❌ Error al crear el producto', true);
-                    }
-                  } catch (err) {
-                    showNotification('❌ Error de conexión', true);
-                  }
-                });
-
-                // Eliminar producto
-                async function deleteProduct(id) {
-                  if (!confirm('¿Estás seguro de eliminar este producto?')) return;
-
-                  try {
-                    const response = await fetch(\`/api/products/\${id}\`, {
-                      method: 'DELETE'
-                    });
-
-                    if (response.ok) {
-                      showNotification('🗑️ Producto eliminado');
-                      document.querySelector(\`[data-id="\${id}"]\`).remove();
-                    } else {
-                      showNotification('❌ Error al eliminar', true);
-                    }
-                  } catch (err) {
-                    showNotification('❌ Error de conexión', true);
-                  }
-                }
-              </script>
             </body>
           </html>
         `;
